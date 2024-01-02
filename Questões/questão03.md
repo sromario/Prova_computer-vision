@@ -29,7 +29,7 @@ Size é usada para redimensionar tamanho das imagens, áreas Retângulares ou pe
 
 # Destaque as diferenças entre elas:
 
-### numpy.adarray VS mat(matriz)
+## numpy.adarray VS mat(matriz)
 
 **Biblioteca Base:**
 mat pertence à biblioteca OpenCV. / numpy.ndarray faz parte da biblioteca NumPy.
@@ -54,12 +54,12 @@ mat tem uma sintaxe específica de OpenCV para manipulação de matrizes, e algu
 numpy.ndarray é facilmente interoperável com outras bibliotecas Python, facilitando a integração com bibliotecas como Pandas, scikit-learn, TensorFlow, entre outras.
 mat é mais específico para operações em OpenCV e pode exigir conversões ao interoperar com outras estruturas de dados.
 
-## conclusão
+### conclusão
 Se você está desenvolvendo um aplicativo que envolve não apenas visão computacional, mas também outras tarefas numéricas gerais, numpy.ndarray é uma escolha mais natural devido à sua versatilidade e integração com o ecossistema NumPy.
 
 Se o foco principal do seu aplicativo é visão computacional e você está utilizando muitas funcionalidades do OpenCV, mat pode ser mais eficiente em termos de desempenho e interoperabilidade com as funções específicas do OpenCV.
 
-### VideoCapture VS VideoWriter
+## VideoCapture VS VideoWriter
 
 **Direção do Fluxo de Dados:**
 VideoCapture: Fluxo de dados vai do arquivo de vídeo ou câmera para o seu código.
@@ -73,10 +73,10 @@ VideoWriter: Configurações relacionadas à gravação de vídeos, incluindo co
 VideoCapture: Geralmente usado em conjunto com operações de processamento de imagem ou visão computacional.
 VideoWriter: Usado após operações de processamento para salvar resultados ou análises.
 
-## conclusão: 
+### conclusão: 
 a escolha entre VideoCapture e VideoWriter dependerá das necessidades específicas do seu aplicativo e do fluxo de processamento que você está implementando. Em muitos casos, ambas as classes são usadas em conjunto para tarefas completas de processamento de vídeo.
 
-### Rect(Retângulo) VS Size
+## Rect(Retângulo) VS Size
 
 **Representação:**
 Rect: Representa um retângulo com informações sobre posição (x e y) e tamanho (width e height).
@@ -90,7 +90,7 @@ Size: Usado principalmente quando você precisa expressar apenas as dimensões d
 Rect: Usado em operações específicas relacionadas a retângulos, como definição de ROIs e cálculos de interseção.
 Size: Usado mais genericamente para definir as dimensões em contextos onde a posição do retângulo não é relevante.
 
-## conclusão
+### conclusão
 Ambas as estruturas têm suas utilizações específicas e a escolha dependerá do tipo de informação que você está lidando em uma determinada situação. Em alguns casos, você pode até usar ambas as estruturas em conjunto para representar completamente uma região retangular em uma imagem.
 
 
@@ -98,8 +98,8 @@ Ambas as estruturas têm suas utilizações específicas e a escolha dependerá 
 
 Compreender as estruturas de dados ao trabalhar com algoritmos de visão computacional é crucial para o sucesso do desenvolvimento e implementação desses algoritmos. Aqui estão algumas razões pelas quais é importante ter um entendimento sólido dessas estruturas:
 
--Manipulação Eficiente de Dados;
--Integração com Bibliotecas Específicas;
--Eficiência em Operações Numéricas;
--Otimização de Algoritmos;
--Aplicação de Técnicas de Processamento de Imagem.
+    -Manipulação Eficiente de Dados;
+    -Integração com Bibliotecas Específicas;
+    -Eficiência em Operações Numéricas;
+    -Otimização de Algoritmos;
+    -Aplicação de Técnicas de Processamento de Imagem.
