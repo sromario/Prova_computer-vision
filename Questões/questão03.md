@@ -31,6 +31,9 @@ Size é usada para redimensionar tamanho das imagens, áreas Retângulares ou pe
 
 **numpy.adarray VS mar(matriz)**
 
+mat pertence à biblioteca OpenCV. / numpy.ndarray faz parte da biblioteca NumPy.
+
+.mat é uma estrutura mais específica para operações relacionadas à visão computacional, sendo mais limitada em termos de funcionalidade comparada a numpy.ndarray. / numpy.ndarray é uma estrutura mais versátil e poderosa que suporta uma ampla gama de operações de array e manipulações
 
 
 **VideoCapture VS VideoWriter**
