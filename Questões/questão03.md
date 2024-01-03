@@ -1,23 +1,27 @@
 # Principais estruturas de dados ultizadas pelo opencv para representar imagem e video:
 
-**-Mat (Matrix):**
-A estrutura básica para representar imagens em OpenCV.
-Uma matriz multidimensional que armazena os valores dos pixels da imagem.
-Pode representar imagens em tons de cinza ou coloridas, dependendo do número de canais.
-
-
-**-Numpy.ndarray:**
-O numpy.ndarray é uma estrutura de dados que representa arrays n-dimensionais, permitindo a manipulação eficiente de dados numéricos em Python.
-Pode ter uma ou mais dimensões, o que é especialmente útil para lidar com dados tabulares, imagens, séries temporais, entre outros.
-
 
 **-VideoCapture:**
-Utilizada para capturar streams de vídeo de diversas fontes, como arquivos de vídeo
-ou dispositivos de câmera.
+
+Classe para captura de vídeo de arquivos de vídeo, sequências de imagens ou câmeras.
+exemplo:
+
+import cv2
+
+webcam = cv2.VideoCapture(0) #definir variavel para armazenar video e caminho
+
+while True:
+ check,img = webcam.read() #ler caminho da camera e armazenar
+ 
+ cv2.imshow('webcamx', img)  #exibir na tela webcam
+ 
+ if cv2.waitKey(1) == 27: #deletei
+    break     
+
 
 
 **-VideoWriter:**
-Utilizada para escrever vídeos a partir de sequências de frames.
+A classe fornece API C++ para escrever arquivos de vídeo ou sequências de imagens.
 
 
 **-Rect (Retângulo):**
