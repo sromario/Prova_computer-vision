@@ -1,109 +1,62 @@
 # Principais estruturas de dados ultizadas pelo opencv para representar imagem e video:
 
+Vamos fazer essa análise como se estivessemos formamdo um código, com passos e explicando cada funcionalida e seu papel.
+
+
+**-Mat(matriz):**
+Esse é o primeiro passo do nosso código, Mat(matriz) é tem a função de ler nossa imagem, armazenando informações como: pixeis, altura, largura e tipo de dado.
+
+exemplo: ```img = cv2.imread('farol.jpg')```
+
 
 **-VideoCapture:**
+No próximo passo, vamos simular que agora quero abrir um vídeo ou até minha webcam. Para isso  usamos a classe VideoCapture para captura do vídeo ou câmeras. então, após definir uma váriavel e atribuir a classe video capture, iremos chamar Mat para ler e armazenar informações sobre webcam. 
 
-Classe para captura de vídeo de arquivos de vídeo, sequências de imagens ou câmeras.
-exemplo:
-
-import cv2
-
-webcam = cv2.VideoCapture(0) #definir variavel para armazenar video e caminho
-
-while True:
- check,img = webcam.read() #ler caminho da camera e armazenar
- 
- cv2.imshow('webcamx', img)  #exibir na tela webcam
- 
- if cv2.waitKey(1) == 27: #deletei
-    break     
-
-
+exemplo: ```webcam = cv2.VideoCapture(0)``` 
+         ```img = webcam.read()```
+            
 
 **-VideoWriter:**
-A classe fornece API C++ para escrever arquivos de vídeo ou sequências de imagens.
+Nesse terceiro passo, supomos que agora eu queira salvar meu vídeo da webcam, ou fiz uma modificação em uma imagem anterior, recortando alguns pontos e quero salvar. Então, usarei o videoWriter para salvar esse novo frame.
 
+exemplo: ```recorte = img[y:y+h, x:x+w] #recortando objeto da imagem original cv2.imwrite(f'recortes/recorte{numOB}.jpg',recorte) #salvando imagem com nome e numero```
+
+Esse exemplo é de simular uma imagem, onde eu queria retirar alguns objetos e depois salvar a nova imagem.
 
 **-Rect (Retângulo):**
-Utilizada para representar regiões retangulares em uma imagem ou vídeo.
+Vamos agora adicionar retângulos em áreas espécificas, suposmos que tenho uma imagem com 3(três) objetos e quero separalos e forma uma nova imagem com eles de forma individual, posso usar o rect para ter dimensão deles e inserir-los em retângulos. Logo, essa função pode ser útil para casos como o acima, onde eu precisei delimitar uma determinada área, para então salvar essa nova imagem com o .writer.
+
+exemplo: ```for x,y,l,a in objetos: cv2.rectangle(img,(x,y),(x+l,y+a),(255,0,0),2) ```
+
+assim, eu consigo colocar o retângulo dentro dos parâmetros passados.
 
 **-Size:**
-Size é usada para redimensionar tamanho das imagens, áreas Retângulares ou pedaço espécifico 
+Agora vamos imaginar que eu quero realizar todos esses procedimentos acima, mas ainda sim estou com uma tela muito grande e isso atrapalha minha visualização na hora de trabalhar. Então, eu posso dar um size nessa imagem ou vídeo e diminuir suas dimensões, ou até aumentar em casos contrários ao meu.
+
+exemplo:  ```imagemRedim = cv2.resize(imagem,(600,640))```
+
+**-Scalar:**
+Para finalizar, eu queria que meu retângulo estivesse com outra cor, como posso fazer isso? usando o scalar podemos brincar com a base de dados visuais, podemos mudar cor do retângulo, linhas ou textos.
+
+exemplo: ```cv2.rectangle(img,(50,50),(200,200),(255,0,0),3)```
+
+aqui eu atribuir retangulo no eixo 50 até 200, cor 255(azul) e largura 3. e essa cor pode variar de acordo com a sua indicação.
 
 
-# Destaque as diferenças entre elas:
 
-## numpy.adarray VS mat(matriz)
+# Qual principal direfença entre uma matriz numpy e demais classes do opencv?
 
-**Biblioteca Base:**
-mat pertence à biblioteca OpenCV. / numpy.ndarray faz parte da biblioteca NumPy.
+A matriz numpy(numpy.ndarray) segue sendo muito boa em conjunto com opencv, é uma poderosa biblioteca que caminha em conjunto com opencv para o desenvolvimento computacional. Mas, o opencv conta com boas ferramentas próprias também, como o caso do mat(matriz). Contudo, o conjunto numpy tem mais foco no que tange dados númericos, computação núnmerica segue mais com numpy.ndarray. no entanto, o mat segue com um foco mais para o processamento de imagens.
 
-**Funcionalidade e Versatilidade:**
-.mat é uma estrutura mais específica para operações relacionadas à visão computacional, sendo mais limitada em termos de funcionalidade comparada a numpy.ndarray. / numpy.ndarray é uma estrutura mais versátil e poderosa que suporta uma ampla gama de operações
-de array e    manipulações
-
-**Suporte para Operações Matemáticas:**
-numpy.ndarray é otimizado para operações matemáticas e suporta broadcasting, operações vetorizadas e outras funcionalidades avançadas.
-mat também suporta operações matemáticas, mas a funcionalidade é mais limitada em comparação com numpy.ndarray.
-
-**Compatibilidade e Integração:**
-numpy.ndarray é amplamente usado em muitas bibliotecas científicas e de computação numérica, tornando-o mais integrado em ecossistemas de ciência de dados e aprendizado de máquina.
-mat é específico para OpenCV e pode ser mais adequado para tarefas específicas de processamento de imagem e visão computacional.
-
-**Sintaxe e Manipulação:**
-A manipulação de arrays em numpy.ndarray segue a sintaxe padrão do NumPy, o que é amplamente utilizado e documentado.
-mat tem uma sintaxe específica de OpenCV para manipulação de matrizes, e algumas operações podem ter uma sintaxe ligeiramente diferente.
-
-**Compatibilidade com Outras Bibliotecas:**
-numpy.ndarray é facilmente interoperável com outras bibliotecas Python, facilitando a integração com bibliotecas como Pandas, scikit-learn, TensorFlow, entre outras.
-mat é mais específico para operações em OpenCV e pode exigir conversões ao interoperar com outras estruturas de dados.
-
-### conclusão
-Se você está desenvolvendo um aplicativo que envolve não apenas visão computacional, mas também outras tarefas numéricas gerais, numpy.ndarray é uma escolha mais natural devido à sua versatilidade e integração com o ecossistema NumPy.
-
-Se o foco principal do seu aplicativo é visão computacional e você está utilizando muitas funcionalidades do OpenCV, mat pode ser mais eficiente em termos de desempenho e interoperabilidade com as funções específicas do OpenCV.
-
-## VideoCapture VS VideoWriter
-
-**Direção do Fluxo de Dados:**
-VideoCapture: Fluxo de dados vai do arquivo de vídeo ou câmera para o seu código.
-VideoWriter: Fluxo de dados vai do seu código para o arquivo de vídeo.
-
-**Configuração de Gravação:**
-VideoCapture: Configurações relacionadas à leitura de vídeos ou câmeras, como codec e resolução.
-VideoWriter: Configurações relacionadas à gravação de vídeos, incluindo codec, taxa de quadros e resolução.
-
- **Operações Conjuntas:**
-VideoCapture: Geralmente usado em conjunto com operações de processamento de imagem ou visão computacional.
-VideoWriter: Usado após operações de processamento para salvar resultados ou análises.
-
-### conclusão: 
-a escolha entre VideoCapture e VideoWriter dependerá das necessidades específicas do seu aplicativo e do fluxo de processamento que você está implementando. Em muitos casos, ambas as classes são usadas em conjunto para tarefas completas de processamento de vídeo.
-
-## Rect(Retângulo) VS Size
-
-**Representação:**
-Rect: Representa um retângulo com informações sobre posição (x e y) e tamanho (width e height).
-Size: Representa apenas as dimensões (largura e altura) de uma área retangular ou de uma imagem.
-
-**Finalidade:**
-Rect: Usado quando você precisa representar não apenas as dimensões, mas também a posição de um retângulo.
-Size: Usado principalmente quando você precisa expressar apenas as dimensões de uma área retangular ou de uma imagem.
-
-**Operações Específicas:**
-Rect: Usado em operações específicas relacionadas a retângulos, como definição de ROIs e cálculos de interseção.
-Size: Usado mais genericamente para definir as dimensões em contextos onde a posição do retângulo não é relevante.
-
-### conclusão
-Ambas as estruturas têm suas utilizações específicas e a escolha dependerá do tipo de informação que você está lidando em uma determinada situação. Em alguns casos, você pode até usar ambas as estruturas em conjunto para representar completamente uma região retangular em uma imagem.
-
+Logo, ambos tem seus pontos de foco, no que tange áreas de atuação. então, irá depender da análise do desenvolvedor entender o que mais se aplica a sua necessidade
 
 # Qual a importância de compreender essas estruturas ao trabalhar com algoritmos de visão computacional?
 
-Compreender as estruturas de dados ao trabalhar com algoritmos de visão computacional é crucial para o sucesso do desenvolvimento e implementação desses algoritmos. Aqui estão algumas razões pelas quais é importante ter um entendimento sólido dessas estruturas:
+Compreender as estruturas de dados ao trabalhar com algoritmos de visão computacional é crucial para o sucesso do desenvolvimento e implementação do seu trabalho. Além de todo conhecimeento que construimos com nossos passos, Aqui estão algumas razões pelas quais é importante ter um entendimento sólido dessas estruturas:
 
     -Manipulação Eficiente de Dados;
     -Integração com Bibliotecas Específicas;
     -Eficiência em Operações Numéricas;
     -Otimização de Algoritmos;
     -Aplicação de Técnicas de Processamento de Imagem.
+    -desing dos dados
