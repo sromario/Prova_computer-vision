@@ -9,6 +9,7 @@ função que você implementou. Salve a imagem resultante.
 
 import cv2
 # pylint: disable=no-member
+
 img =cv2.imread('farol.jpg')#para ler a imagem, chamando o caminho.
 
 imgCinza =cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)# trasforma imagem da variavel img em cinza.
@@ -26,7 +27,7 @@ cv2.imshow('imagem cinzaSuavizada', imgBlur)#para exibir a imagem depois de cinz
 
 cv2.imshow('imagem final', th1)#para exibir a imagem depois de cinza, suavizada e binarizada.
 
-CAMINHO = 'Questão01/'#o caminho da pasta que a imagem vai parar.
+CAMINHO = 'Questoes/'#o caminho da pasta que a imagem vai parar.
 
 
 cv2.imwrite(f'{CAMINHO}nova.jpg',th1)#salvando foto nova.
