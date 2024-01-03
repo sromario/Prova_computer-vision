@@ -1,6 +1,6 @@
 # Principais estruturas de dados ultizadas pelo opencv para representar imagem e video:
 
-Vamos fazer essa análise como se estivessemos formamdo um código, com passos e explicando cada funcionalida e seu papel.
+Vamos fazer essa análise como se estivessemos formando um código, com passos e explicando cada funcionalidade e seu papel.
 
 
 **-Mat(matriz):**
@@ -46,17 +46,15 @@ aqui eu atribuir retangulo no eixo 50 até 200, cor 255(azul) e largura 3. e ess
 
 # Qual principal direfença entre uma matriz numpy e demais classes do opencv?
 
-A matriz numpy(numpy.ndarray) segue sendo muito boa em conjunto com opencv, é uma poderosa biblioteca que caminha em conjunto com opencv para o desenvolvimento computacional. Mas, o opencv conta com boas ferramentas próprias também, como o caso do mat(matriz). Contudo, o conjunto numpy tem mais foco no que tange dados númericos, computação núnmerica segue mais com numpy.ndarray. no entanto, o mat segue com um foco mais para o processamento de imagens.
+A matriz numpy(numpy.ndarray) segue sendo muito boa em conjunto com opencv, é uma poderosa biblioteca que caminha em conjunto com opencv para o desenvolvimento computacional. Mas, o opencv conta com boas ferramentas próprias também, como o caso do mat(matriz). Contudo, o conjunto numpy tem mais foco no que tange dados númericos, computação núnmerica e segue mais com numpy.ndarray. no entanto, os próprios do opencv segue com um foco mais para o processamento de imagens. Um exemplo é que não temos algo similar ao videoCapture no numpy próprio, mas podemos usar em conjunto com o opencv e fazer algo mais eficiente. 
 
-Logo, ambos tem seus pontos de foco, no que tange áreas de atuação. então, irá depender da análise do desenvolvedor entender o que mais se aplica a sua necessidade
+exemplo: ```ret, frame = cap.read() ```  
+
+aqui nós temos um read() que faz parte do videoCapture, mas o temos o ret como um indicador de sucesso, e o frame para o quadro de video como um numpy array. Com isso, o frame pode agir tanto como manipulação de arrays multidimensionais, como processamento de imagem, e análise de dados, etc.
+
+Logo, ambos tem seus pontos de foco, no que tange áreas de atuação. então, irá depender da análise do desenvolvedor entender o que mais se aplica a sua necessidade. Geralmente, uma OpenCV para manipulação de imagem e NumPy para operações numéricas, e combinadas são essenciais para desenvolvimentos de projetos em visão computacional.
 
 # Qual a importância de compreender essas estruturas ao trabalhar com algoritmos de visão computacional?
 
-Compreender as estruturas de dados ao trabalhar com algoritmos de visão computacional é crucial para o sucesso do desenvolvimento e implementação do seu trabalho. Além de todo conhecimeento que construimos com nossos passos, Aqui estão algumas razões pelas quais é importante ter um entendimento sólido dessas estruturas:
+Compreender as estruturas da visão computacional é crucial para o sucesso do desenvolvimento e implementação do seu trabalho. Além de todo conhecimeento dos questionamentos acima com nossos passos, vale ressaltar que é essencial para definir o propósito real do seu projeto, também para melhor escolha das ferramentas e consequentimente mais sucesso ao desenvovler.
 
-    -Manipulação Eficiente de Dados;
-    -Integração com Bibliotecas Específicas;
-    -Eficiência em Operações Numéricas;
-    -Otimização de Algoritmos;
-    -Aplicação de Técnicas de Processamento de Imagem.
-    -desing dos dados
