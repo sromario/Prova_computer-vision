@@ -53,8 +53,8 @@ exemplo: ret, frame = cap.read()
 
 Aqui nós temos um read () que faz parte do VideoCapture, mas temos o ret como um indicador de sucesso e temos o frame para o quadro de vídeo como um NumPy array. Com isso, o frame pode agir tanto como manipulação de arrays multidimensionais, como processamento de imagem,  análise de dados, etc.
 
-Logo ambos têm seus pontos de foco no que tange às áreas de atuação. Então, irá depender da análise do desenvolvedor entender o que mais se aplica a sua necessidade. Geralmente usa-se uma OpenCV para manipulação de imagem e NumPy para operações numéricas, e combinadas são essenciais para desenvolvimentos de projetos em visão computacional
+Logo a principal vantagem está em poder ter funções prontas para serem utilizadas em determinadas tarefas, como aplicações de filtros, mascaras, redefinição de tamanho, detecção de bordas, etc. Isso otimizar o tempo e esforço para realizar alguns processamentos de imagem e/ou vídeo. A desvantagem é que por serem funções prontas, você não tem a liberdade de customização, caso precise de algo mais específico em uma tarefa, que nestes casos a utilização de bibliotecas e/ou frameworks específicos como Numpy, Keras, Tensorflow, etc. Irão lhe permitir ter mais liberdade de implementação.
 
 # Qual a importância de compreender essas estruturas ao trabalhar com algoritmos de visão computacional?
 
-A compreensão das estruturas da visão computacional é essencial para o sucesso do desenvolvimento e implementação do seu trabalho. Para além do conhecimento dos questionamentos acima, expostos no nosso passo a passo, vale ressaltar que ter esses fundamentos é crucial para definir o propósito real do projeto, além da melhor escolha das ferramentas que, consequentemente, traz mais sucesso ao desenvolver.
+A Importância de compreender essas estruturas se dar pelo tipo de tarefa que você precisará realizar. Ora você tenha que fazer uma máscara de segmentação, você precisa em primeiro lugar saber o que isso significa, e para que serve,  para assim seguir com a melhor abordagem de implementação. Não existe receita de bolo, mas sim a solução mais adequada para o problema que tens que resolver.
