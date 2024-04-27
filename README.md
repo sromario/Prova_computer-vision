@@ -7,4 +7,4 @@ esse repositoria visa responder as questões solicitadas
 Para clonar este repositório, execute o seguinte comando no terminal:
 
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/sromario/Prova_computer-vision.git
